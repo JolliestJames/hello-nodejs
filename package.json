@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/JolliestJames/converter/issues"
   },
-  "homepage": "https://github.com/JolliestJames/converter#readme"
+  "homepage": "https://github.com/JolliestJames/converter#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
 }
