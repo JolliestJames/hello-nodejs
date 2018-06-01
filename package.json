@@ -18,6 +18,8 @@
   "homepage": "https://github.com/JolliestJames/converter#readme",
   "dependencies": {
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "request": "^2.87.0"
   }
 }
