@@ -1,11 +1,11 @@
 var expect  = require("chai").expect;
 var request = require("request");
 
-describe("Color Code Converter API", function() {
+describe("Say API", function() {
 
-  describe("RGB to Hex conversion", function() {
+  describe("saying hello to the user", function() {
 
-    var url = "http://localhost:3000/rgbToHex?red=255&green=255&blue=255";
+    var url = "http://localhost:3000/say/hello?name=fake_name";
 
     it("returns status 200", function(done) {
       request(url, function(error, response, body) {
@@ -14,18 +14,18 @@ describe("Color Code Converter API", function() {
       });
     });
 
-    it("returns the color in hex", function(done) {
+    it("says hello to the user", function(done) {
       request(url, function(error, response, body) {
-        expect(body).to.equal("ffffff");
+        expect(body).to.equal("Hello fake_name");
         done();
       });
     });
 
   });
 
-  describe("Hex to RGB conversion", function() {
+  describe("saying the sum of two numbers", function() {
 
-    var url = "http://localhost:3000/hexToRgb?hex=00ff00";
+    var url = "http://localhost:3000/say/the-sum?left=5&right=37";
 
     it("returns status 200", function(done) {
       request(url, function(error, response, body) {
@@ -34,9 +34,9 @@ describe("Color Code Converter API", function() {
       });
     });
 
-    it("returns the color in RGB", function(done) {
+    it("says the sum of two numbers", function(done) {
       request(url, function(error, response, body) {
-        expect(body).to.equal("[0,255,0]");
+        expect(body).to.equal("42");
         done();
       });
     });
