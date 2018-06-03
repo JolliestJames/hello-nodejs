@@ -63,4 +63,64 @@ describe("Say API", function() {
 
   });
 
+  describe("saying the product of two numbers", function() {
+
+    var url = "http://localhost:3000/say/the-product?left=5&right=5";
+
+    it("returns status 200", function(done) {
+      request(url, function(error, response, body) {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it("says the product of two numbers", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.equal("25");
+        done();
+      });
+    });
+
+  });
+
+  describe("saying the difference of two numbers", function() {
+
+    var url = "http://localhost:3000/say/the-difference?left=45&right=3";
+
+    it("returns status 200", function(done) {
+      request(url, function(error, response, body) {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it("says the difference of two numbers", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.equal("42");
+        done();
+      });
+    });
+
+  });
+
+  describe("saying the remainder of two numbers", function() {
+
+    var url = "http://localhost:3000/say/the-remainder?left=13&right=5";
+
+    it("returns status 200", function(done) {
+      request(url, function(error, response, body) {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it("says the remainder of two numbers", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.equal("3");
+        done();
+      });
+    });
+
+  });
+
 });
