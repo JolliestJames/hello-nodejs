@@ -43,4 +43,24 @@ describe("Say API", function() {
 
   });
 
+  describe("saying the quotient of two numbers", function() {
+
+    var url = "http://localhost:3000/say/the-quotient?left=40&right=10";
+
+    it("returns status 200", function(done) {
+      request(url, function(error, response, body) {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it("says the quotient of two numbers", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.equal("4");
+        done();
+      });
+    });
+
+  });
+
 });
